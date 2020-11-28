@@ -59,5 +59,5 @@ $contasCorrentes['121.384.433-00']['saldo'] = deposita($contasCorrentes['121.384
 $contasCorrentes['121.384.433-00']['saldo'] = deposita($contasCorrentes['121.384.433-00'], 0);
 
 foreach ($contasCorrentes as $cpf => $conta) {
-    echo "$cpf : " . $conta['titular'] . "  " . $conta['saldo'] . PHP_EOL;
+    exibeMensagem("$cpf: {$conta['titular']} {$conta['saldo']}");
 }
