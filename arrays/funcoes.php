@@ -24,3 +24,9 @@ function deposita(array $conta, float $valor): float
     echo exibeMensagem("Só são aceitos depósitos maiores que 0.");
     return $conta['saldo'];
 }
+
+/* Passagem por referência (&) */
+function converteTitularParaMaiusculo(array &$conta): void
+{
+    $conta['titular'] = mb_strtoupper($conta['titular']);
+}

@@ -35,6 +35,7 @@ $contasCorrentes['110.384.444-34']['saldo'] = saca($contasCorrentes['110.384.444
 $contasCorrentes['121.384.433-00']['saldo'] = deposita($contasCorrentes['121.384.433-00'], 2000);
 $contasCorrentes['121.384.433-00']['saldo'] = deposita($contasCorrentes['121.384.433-00'], 0);
 
+converteTitularParaMaiusculo($contasCorrentes['110.384.444-40']);
 foreach ($contasCorrentes as $cpf => $conta) {
     exibeMensagem("$cpf: {$conta['titular']} {$conta['saldo']}");
 }
