@@ -16,6 +16,8 @@ function funcao1()
 function funcao2()
 {
     echo 'Entrei na função 2' . PHP_EOL;
+    throw new RuntimeException('uma exceção aconteceu!');
+    
     $array = new SplFixedArray(2);
     $array[3];
     $divisaoPorZero = intdiv(5,0);
