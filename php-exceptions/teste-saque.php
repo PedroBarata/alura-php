@@ -1,6 +1,6 @@
 <?php
 
-use Alura\Banco\Modelo\Conta\{ContaPoupanca, SaldoInsuficienteException, Titular};
+use Alura\Banco\Modelo\Conta\{ContaPoupanca, DepositoInvalidoException, SaldoInsuficienteException, Titular};
 use Alura\Banco\Modelo\{CPF, Endereco};
 
 require_once 'autoload.php';
@@ -12,7 +12,13 @@ $conta = new ContaPoupanca(
         new Endereco('Petrópolis', 'bairro Teste', 'Rua lá', '37')
     )
 );
-$conta->deposita(500);
+try {
+    $conta->deposita(-500);
+}catch (InvalidArgumentException $exception) {
+    echo "Nao foi possivel depositar" . PHP_EOL;
+    echo $exception->getMessage();
+}
+
 
 /**
  * usamos um try/catch e podemos fazer o que quisermos com a exception
