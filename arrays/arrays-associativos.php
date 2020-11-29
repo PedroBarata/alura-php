@@ -42,3 +42,27 @@ foreach ($contasCorrentes as $cpf => $conta) {
 
     exibeMensagem("$cpf: $nome $valor");
 }
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Contas correntes</h1>
+    <dl>
+        <dt>
+            <?php foreach ($contasCorrentes as $cpf => $conta) {?>
+            <h3>
+            <?="Nome: $conta[titular] - $cpf"?>
+            </h3>
+        </dt>
+        <dd>
+            <?="Saldo: {$conta['saldo']}"?>
+        </dd>
+            <?php }?>
+    </dl>
+</body>
+</html>
